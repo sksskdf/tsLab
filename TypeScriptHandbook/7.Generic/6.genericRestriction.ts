@@ -28,4 +28,19 @@ function logText<T extends LengthWise>(text: T): T {
 */
 
 logText(10); // Error, 숫자 타입에는 `length`가 존재하지 않으므로 오류 발생
-logText({ length: 0, value: 'hi' }); // `text.length` 코드는 객체의 속성 접근과 같이 동작하므로 오류 없음
+logText({ length: 0, value: "hi" }); // `text.length` 코드는 객체의 속성 접근과 같이 동작하므로 오류 없음
+
+/*
+객체의 속성을 제약하는 방법
+두 객체를 비교할 때도 제네릭 제약 조건을 사용할 수 있습니다.
+*/
+
+function getProperty<T, O extends keyof T>(obj: T, key: O) {
+  return obj[key];
+}
+let obj = { a: 1, b: 2, c: 3 };
+
+getProperty(obj, "a"); // okay
+getProperty(obj, "z"); // error: "z"는 "a", "b", "c" 속성에 해당하지 않습니다.
+
+//제네릭을 선언할 때 <O extends keyof T> 부분에서 첫 번째 인자로 받는 객체에 없는 속성들은 접근할 수 없게끔 제한하였습니다.
