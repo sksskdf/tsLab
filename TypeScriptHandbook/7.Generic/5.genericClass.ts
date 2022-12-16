@@ -4,12 +4,12 @@
 제네릭 클래스는 앞에서 살펴본 제네릭 인터페이스와 비슷합니다. 코드를 보겠습니다.
 */
 
-class GenericMath<T> {
+class GenericMath<T, K> {
   pi: T;
-  sum: (x: T, y: T) => T;
+  sum: (x: T, y: K) => T;
 }
 
-let math = new GenericMath<number>();
+let math = new GenericMath<number, number>();
 
 /*
 제네릭 클래스를 선언할 때 클래스 이름 오른쪽에 <T>를 붙여줍니다. 
