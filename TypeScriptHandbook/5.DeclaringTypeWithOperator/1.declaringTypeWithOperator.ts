@@ -61,3 +61,4 @@ function introduce(someone: Person | Developer) {
 하지만, 타입스크립트 관점에서는 introduce() 함수를 호출하는 시점에 Person 타입이 올지 Developer 타입이 올지 알 수가 없기 때문에 
 어느 타입이 들어오든 간에 오류가 안 나는 방향으로 타입을 추론하게 됩니다.
 */
+
