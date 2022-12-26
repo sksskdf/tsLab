@@ -1,5 +1,5 @@
 //클래스의 속성에 readonly 키워드를 사용하면 접근만 가능합니다.
-
+//아래와 같이 접근제한자를 설정할 수도 있습니다.
 class Developer {
   private name: string;
 
